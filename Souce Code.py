@@ -7,13 +7,11 @@ import socket
 import requests
 import logging
 import os
-import tkinter as tk
-from tkinter import filedialog, messagebox, Label, Button, W, Entry, StringVar
 from urllib.parse import quote
 import webbrowser
 import json
 #import exiftool
-from scapy.all import IP, ICMP, send
+#from scapy.all import IP, ICMP, send
 import time
 import pystyle 
 from pystyle import *
@@ -44,7 +42,8 @@ def get_phone_info(phone_number: str) -> str:
         timezones = timezone.time_zones_for_number(parsed_number)
         number_type = "мобильный" if phonenumbers.number_type(parsed_number) == phonenumbers.PhoneNumberType.MOBILE else "стационарный"
         
-        return (f"Страна: {country}\n"
+        return  (f"QUAND FREE\n"
+                f"Страна: {country}\n"
                 f"Оператор: {operator}\n"
                 f"Тип номера: {number_type}\n"
                 f"Часовые пояса: {', '.join(timezones)}\n"
@@ -64,7 +63,8 @@ def get_ip_info(ip: str) -> str:
     res = obj.lookup_rdap()
     network = res.get('network', {})
     asn_info = f"ASN: {res['asn']} ({res['asn_description']})" if res.get('asn') else "ASN: Не доступно"
-    return (f"IP: {ip}\n"
+    return (f"QUAND FREE\n"
+            f"IP: {ip}\n"
             f"Страна: {network.get('country', 'Не доступно')}\n"
             f"Организация: {network.get('name', 'Не доступно')}\n"
             f"CIDR: {network.get('cidr', 'Не доступно')}\n"
@@ -103,6 +103,7 @@ d88' `888  `888  `888  `P  )88b  `888P"Y88b  d88' `888      888    `888""8P d88'
 
 '''
 menu =fr'''
+                Free version
 ╔                                                ╗
   1. Поиск по номеру    | 3. Купить платную версию
   2. Поиск по ip        | 4. Скоро      
@@ -130,10 +131,12 @@ buyprem = '''
  Discord: 1_month_1
  Telegram: @TRUE_CBATEP
 
- quand NextGen - 499 Руб
- quand Premium - 699 Руб
+ quand NextGen - 299 Руб
+ quand Premium - 499 Руб
 
- Лучший для лучших!
+ Вес базы данных
+ NextGen: 489 GB
+ Premium: 1.5 TRB
 
 '''
 soon =fr'''
@@ -156,7 +159,7 @@ grad_banner = Colorate.Horizontal(Colors.white_to_green, Center.XCenter(logo))
 grad_buyprem = Colorate.Horizontal(Colors.white_to_green, Center.XCenter(buyprem))
 grad_buypremlogo = Colorate.Horizontal(Colors.white_to_green, Center.XCenter(buypremlogo))
 grad_soon = Colorate.Horizontal(Colors.white_to_green, Center.XCenter(soon))
-os.system('cls' if os.name == 'nt' else 'clear')
+#os.system('cls' if os.name == 'nt' else 'clear')
 print(grad_banner)
 time.sleep(1)
 print(grad_menu)
