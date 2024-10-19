@@ -159,7 +159,7 @@ grad_banner = Colorate.Horizontal(Colors.white_to_green, Center.XCenter(logo))
 grad_buyprem = Colorate.Horizontal(Colors.white_to_green, Center.XCenter(buyprem))
 grad_buypremlogo = Colorate.Horizontal(Colors.white_to_green, Center.XCenter(buypremlogo))
 grad_soon = Colorate.Horizontal(Colors.white_to_green, Center.XCenter(soon))
-#os.system('cls' if os.name == 'nt' else 'clear')
+os.system('cls' if os.name == 'nt' else 'clear')
 print(grad_banner)
 time.sleep(1)
 print(grad_menu)
@@ -170,7 +170,6 @@ if option == 1:
             info = get_phone_info(phone_number)
             print(info)
             input('')
-            (option)
             
 elif option == 2:
             os.system('cls' if os.name == 'nt' else 'clear')
